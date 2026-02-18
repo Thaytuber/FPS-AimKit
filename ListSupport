@@ -1,11 +1,42 @@
-local allowedIds = {
-    [12137249458] = true, -- Game 1
-    [90568064448279] = true   -- Game 2
+local allowedPlaces = {
+    [12137249458] = true,
+    [9056804448279] = true,
+    [76668493349114] = true
 }
 
-if allowedIds[game.PlaceId] then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Thaytuber/FPS-AimKit/refs/heads/main/FPS%20AimKit%20v1"))()
-    print("Fe Universal Menu Loaded Successfully!")
+local allowedUniverses = {
+    [9294074907] = true,
+    [8162693810] = true
+}
+
+-- 🔹 progress bar function
+local function progressBar(text, duration)
+    local steps = 20 -- độ dài thanh
+    local waitTime = duration / steps
+
+    for i = 1, steps do
+        local percent = math.floor((i / steps) * 100)
+        local filled = string.rep("#", i)
+        local empty = string.rep("-", steps - i)
+
+        print(text .. " [" .. filled .. empty .. "] " .. percent .. "%")
+        task.wait(waitTime)
+    end
+end
+
+if allowedPlaces[game.PlaceId] or allowedUniverses[game.GameId] then
+    progressBar("Checking game", 1.2)
+    progressBar("Loading FPS AimKit", 2)
+
+    local success, err = pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Thaytuber/FPS-AimKit/refs/heads/main/FPS%20AimKit%20v1"))()
+    end)
+
+    if success then
+        print("FPS-AimKit Loaded Successfully!")
+    else
+        warn("Load error:", err)
+    end
 else
     warn("Unsupported game")
 end
