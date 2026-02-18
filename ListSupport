@@ -5,6 +5,7 @@ local allowedIds = {
 
 if allowedIds[game.PlaceId] then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Thaytuber/FPS-AimKit/refs/heads/main/FPS%20AimKit%20v1"))()
+    print("Fe Universal Menu Loaded Successfully!")
 else
     warn("Unsupported game")
 end
