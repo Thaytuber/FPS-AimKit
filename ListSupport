@@ -1,0 +1,10 @@
+local allowedIds = {
+    [12137249458] = true, -- Game 1
+    [90568064448279] = true   -- Game 2
+}
+
+if allowedIds[game.PlaceId] then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Thaytuber/FPS-AimKit/refs/heads/main/FPS%20AimKit%20v1"))()
+else
+    warn("Unsupported game")
+end
