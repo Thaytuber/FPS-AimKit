@@ -1,17 +1,23 @@
 local allowedPlaces = {
-    [12137249458] = true,
-    [9056804448279] = true,
-    [76668493349114] = true
+    [12137249458] = true, -- Gun Grounds FFA
+    [9056804448279] = true, -- One Tap
+    [76668493349114] = true, -- SNIPE OR DIE
+    [5732301513] = true, -- TRENCHES
+    [83728249169833] = true, -- Quick Shot
+    [286090429] = true -- Arsenal
 }
 
 local allowedUniverses = {
-    [9294074907] = true,
-    [8162693810] = true
+    [9294074907] = true, -- One Tap
+    [8162693810] = true, -- SNIPE OR DIE
+    [2032222420] = true, -- TRENCHES
+    [9323860275] = true, -- Quick Shot
+    [111958650] = true -- Arsenal
 }
 
 -- 🔹 progress bar function
 local function progressBar(text, duration)
-    local steps = 20 -- độ dài thanh
+    local steps = 20
     local waitTime = duration / steps
 
     for i = 1, steps do
